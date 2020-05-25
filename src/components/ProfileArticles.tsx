@@ -14,7 +14,7 @@ function ProfileArticles({ username }: { username: string }) {
     },
     { type: 'ALL', label: 'Global Feed' },
   ];
-
+  // ArticlesProvider使用场景
   return (
     <ArticlesProvider>
       <div className="container">
@@ -30,5 +30,5 @@ function ProfileArticles({ username }: { username: string }) {
     </ArticlesProvider>
   );
 }
-
+// 性能优化
 export default React.memo(ProfileArticles);

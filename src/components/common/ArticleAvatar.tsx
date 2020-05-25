@@ -6,7 +6,7 @@ import { ALT_IMAGE_URL } from '../../utils';
 type ArticleAvatarProps = {
   article: IArticle;
 };
-
+// 头像组件
 export default function ArticleAvatar({
   article: { author, createdAt },
 }: ArticleAvatarProps) {

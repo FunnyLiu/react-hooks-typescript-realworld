@@ -6,6 +6,7 @@ import { navigate, Link, RouteComponentProps, Redirect } from '@reach/router';
 import { IErrors } from '../types';
 
 export default function Login(_: RouteComponentProps) {
+  // 简单的局部状态，使用useState即可
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [loading, setLoading] = React.useState(false);

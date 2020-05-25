@@ -11,7 +11,7 @@ export default function Editor({
 
   React.useEffect(() => {
     let ignore = false;
-
+    // 获取文件接口
     const fetchArticle = async () => {
       try {
         const payload = await getArticle(slug);
@@ -35,7 +35,7 @@ export default function Editor({
       ignore = true;
     };
   }, [slug]);
-
+  // 处理input的change
   const handleChange = (
     event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -67,6 +67,7 @@ export default function Editor({
       } else {
         payload = await createArticle(article);
       }
+      // router跳转走
       navigate(`/article/${payload.data.article.slug}`);
     } catch (error) {
       console.log(error);

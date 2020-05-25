@@ -1,5 +1,5 @@
 import { IUser } from '../types';
-
+// 用户鉴权相关的reducer
 export type AuthAction =
   | {
       type: 'LOGIN';

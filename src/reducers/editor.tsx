@@ -1,5 +1,5 @@
 import { IErrors } from '../types';
-
+// 编辑器相关reducer
 type EditorAction =
   | { type: 'ADD_TAG'; tag: string }
   | { type: 'REMOVE_TAG'; tag: string }

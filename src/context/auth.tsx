@@ -13,12 +13,12 @@ type AuthContextProps = {
   state: AuthState;
   dispatch: React.Dispatch<AuthAction>;
 };
-
+// 创建context
 const AuthContext = React.createContext<AuthContextProps>({
   state: initialState,
   dispatch: () => initialState,
 });
-
+// 提供AuthProvider
 export function AuthProvider(props: React.PropsWithChildren<{}>) {
   const [state, dispatch] = React.useReducer(authReducer, initialState);
   React.useEffect(() => {
@@ -37,7 +37,7 @@ export function AuthProvider(props: React.PropsWithChildren<{}>) {
 
   return <AuthContext.Provider value={{ state, dispatch }} {...props} />;
 }
-
+// 提供useAuth
 export default function useAuth() {
   return React.useContext(AuthContext);
 }

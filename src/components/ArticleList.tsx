@@ -30,6 +30,7 @@ const loadArticles = (tab: ITab, page = 0) => {
 };
 
 export default function ArticleList() {
+  // 拿到文章相关数据
   const {
     state: { articles, loading, error, articlesCount, selectedTab, page },
     dispatch,
@@ -38,10 +39,12 @@ export default function ArticleList() {
   React.useEffect(() => {
     let ignore = false;
     async function fetchArticles() {
+      // 触发获取的dispatch
       dispatch({ type: 'FETCH_ARTICLES_BEGIN' });
       try {
         const payload = await loadArticles(selectedTab, page);
         if (!ignore) {
+          // 触发拿到文章列表操作
           dispatch({ type: 'FETCH_ARTICLES_SUCCESS', payload: payload.data });
         }
       } catch (error) {
@@ -63,7 +66,7 @@ export default function ArticleList() {
   if (articles.length === 0) {
     return <div className="article-preview">No articles are here... yet.</div>;
   }
-
+  // 组装组件，透传dispatch
   return (
     <React.Fragment>
       {articles.map((article) => (

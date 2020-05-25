@@ -1,5 +1,5 @@
 import { IArticle } from '../types';
-
+// 文章列表相关的reducer
 export type ArticleListAction =
   | { type: 'FETCH_ARTICLES_BEGIN' }
   | {
@@ -48,6 +48,7 @@ export function articlesReducer(
         loading: true,
         error: null,
       };
+      // 对文章列表进行format
     case 'FETCH_ARTICLES_SUCCESS':
       return {
         ...state,
@@ -82,6 +83,7 @@ export function articlesReducer(
         selectedTab: action.tab,
       };
     case 'SET_PAGE':
+      // 设置页面逻辑
       return {
         ...state,
         page: action.page,

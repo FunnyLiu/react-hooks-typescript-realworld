@@ -6,7 +6,7 @@ import { RouteComponentProps } from '@reach/router';
 interface PrivateRouteProps extends RouteComponentProps {
   as: React.ElementType<any>;
 }
-
+// 先鉴权再调路由
 export default function PrivateRoute({
   as: Comp,
   ...props

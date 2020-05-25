@@ -18,7 +18,7 @@ export default function Profile({
 
   React.useEffect(() => {
     let ignore = false;
-
+    // 请求接口
     async function fetchProfile() {
       try {
         const payload = await getProfile(username);

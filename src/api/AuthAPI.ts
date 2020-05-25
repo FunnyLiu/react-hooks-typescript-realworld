@@ -6,7 +6,7 @@ import { setToken } from './APIUtils';
 type User = {
   user: IUser & { token: string };
 };
-
+// 处理用户相关数据，本地存储
 function handleUserResponse({ user: { token, ...user } }: User) {
   setLocalStorage(TOKEN_KEY, token);
   setToken(token);

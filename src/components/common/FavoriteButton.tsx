@@ -13,10 +13,12 @@ type FavoriteButtonProps = {
 export default function FavoriteButton({
   article,
   dispatch,
+  // 子内容
   children,
 }: FavoriteButtonProps) {
+  // loading状态
   const [loading, setLoading] = React.useState(false);
-
+  // click后的异步逻辑      
   const handleClick = async () => {
     setLoading(true);
     if (article.favorited) {
@@ -34,7 +36,7 @@ export default function FavoriteButton({
     }
     setLoading(false);
   };
-
+  // 通过className来控制样式的显示与否
   const classNames = ['btn', 'btn-sm'];
 
   if (article.favorited) {
@@ -51,6 +53,7 @@ export default function FavoriteButton({
     >
       <i className="ion-heart" />
       &nbsp;
+      {/* 字内容透传 */}
       {children}
     </button>
   );

@@ -1,5 +1,5 @@
 import { IArticle, IComment } from '../types';
-
+// 文章相关reducers
 export type ArticleAction =
   | { type: 'FETCH_ARTICLE_BEGIN' }
   | {

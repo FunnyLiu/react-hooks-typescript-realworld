@@ -6,7 +6,7 @@ type FollowUserButtonProps = {
   onClick: () => void;
   loading: boolean;
 };
-
+// 关注组件
 export default function FollowUserButton({
   profile,
   onClick,
@@ -14,7 +14,7 @@ export default function FollowUserButton({
 }: FollowUserButtonProps) {
   const classNames = ['btn', 'btn-sm', 'action-btn'];
   let text = '';
-
+  // 样式操作和组件内的简单文案显示逻辑
   if (profile.following) {
     classNames.push('btn-secondary');
     text += `Unfollow ${profile.username}`;

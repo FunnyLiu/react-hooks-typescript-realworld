@@ -7,6 +7,7 @@ type TabsListProps = {
 };
 
 export default function TabList({ data }: TabsListProps) {
+  // 拿到state中selectedTab相关数据
   const {
     state: { selectedTab },
     dispatch,
@@ -16,6 +17,7 @@ export default function TabList({ data }: TabsListProps) {
     <Tab
       key={tab.type}
       isSelected={selectedTab.type === tab.type}
+      // click事件处理数据
       onClick={() => dispatch({ type: 'SET_TAB', tab })}
     >
       {tab.label}

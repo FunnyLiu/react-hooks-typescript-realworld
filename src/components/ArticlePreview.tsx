@@ -10,7 +10,7 @@ type ArticlePreviewProps = {
   article: IArticle;
   dispatch: React.Dispatch<ArticleListAction>;
 };
-
+// 简单的组件和dispatch透传
 export default function ArticlePreview({
   article,
   dispatch,

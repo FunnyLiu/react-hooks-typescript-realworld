@@ -10,17 +10,17 @@ type ArticleListContextProps = {
   state: ArticleListState;
   dispatch: React.Dispatch<ArticleListAction>;
 };
-
+// 创建context
 const ArticlesContext = React.createContext<ArticleListContextProps>({
   state: initialState,
   dispatch: () => initialState,
 });
-
+// 封装Provider，基于useReducer来管理state
 export function ArticlesProvider(props: React.PropsWithChildren<{}>) {
   const [state, dispatch] = React.useReducer(articlesReducer, initialState);
   return <ArticlesContext.Provider value={{ state, dispatch }} {...props} />;
 }
-
+// 封装useArticles，套一层useContext
 export default function useArticles() {
   const context = React.useContext(ArticlesContext);
   if (!context) {

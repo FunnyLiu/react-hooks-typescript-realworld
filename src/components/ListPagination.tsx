@@ -6,7 +6,7 @@ type ListPaginationProps = {
   articlesCount: number;
   dispatch: React.Dispatch<ArticleListAction>;
 };
-
+// 分页器组件
 export default function ListPagination({
   page,
   articlesCount,

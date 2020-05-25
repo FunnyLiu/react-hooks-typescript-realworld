@@ -22,7 +22,7 @@ axios.interceptors.response.use(
     return Promise.reject(error.response);
   },
 );
-
+// 设置请求头等等
 export function setToken(token: string | null) {
   if (token) {
     axios.defaults.headers.common['Authorization'] = `Token ${token}`;
